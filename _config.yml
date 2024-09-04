@@ -1,5 +1,0 @@
-title: myproject
-baseurl: "/src"
-# url: ""
-markdown: kramdown
-theme: jekyll-theme-cayman
