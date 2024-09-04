@@ -1,2 +1,2 @@
 title: Hello
-layout: default
+layout: /src/index.html
