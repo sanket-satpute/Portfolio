@@ -1,23 +1,8 @@
-/* Root Variables */
-:root {
-    --col-primary: #f5f5f5;
-    --col-secondary: #ffffff;
-    --col-accent: #ffa500;
-    --col-text-dark: #2E3B4E;
-    --col-text-light: #ffffff;
-    --col-border: #00000060;
-    --col-grey-light: #d9d9d9;
-    --col-blue-light: #82ADCC;
-    --box-shadow: 0px 2px 4px 3px rgba(239, 226, 226, 0.7);
-}
-
-/* Container */
 .container {
     background-color: #f5f5f5;
     padding: 2rem 5rem 5rem;
 }
 
-/* Close Button */
 .close {
     font-size: 2em;
     cursor: pointer;
