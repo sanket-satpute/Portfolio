@@ -1,0 +1,171 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    padding: 0rem;
+    height: auto;
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 2% auto 10% auto;
+    width: 85%;
+}
+
+
+
+.intro-first-block {
+    position: relative;
+    text-align: center;
+    padding-left: 1rem;
+    border-left: 0.15rem solid #ffa500;
+}
+
+.intro-first-block h2 {
+    text-align: left;
+}
+
+.intro-first-block .first {
+    font-size: calc(1rem * 1.5vw);
+}
+
+.intro-first-block .second {
+    /* font-size: calc(1rem * 1.5vw);     */
+    font-size: 3rem
+}
+
+.intro-first-block .third {
+    font-size: calc(0.9rem * 1.5vw);
+    font-weight: 600;
+}
+
+.font-monteserrat {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.font-source-code {
+    font-family: "Source Code Pro", monospace;
+}
+
+.hire-me-btn {
+    background-color: #2E3B4E;
+    padding: 0.3rem 1.4rem;
+    border: none;
+    color: #ffa500;
+    font-size: calc(1rem + 0.5vw);
+    margin: 2rem 0 0 0;
+    cursor: pointer;
+}
+
+.intro-second-block {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.intro-second-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.2rem;
+}
+
+/* Media Queries */
+@media (min-width: 480px) {
+    .main-container {
+        padding: 2rem;  
+        height: auto;
+    }
+
+    .introduction {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        /* margin: 10% auto; */
+        margin: 0 auto 5% auto;
+    }
+
+    .intro-first-block {
+        text-align: left;
+        border-left: 0.5rem solid #ffa500;
+        padding: 1rem 0 1rem 1.5rem;
+    }
+
+    .intro-second-block {
+        max-width: 100%;
+    }
+
+    .intro-first-block .first {
+        font-size: calc(1.5rem + 1.5vw);
+    }
+    
+    .intro-first-block .second {
+        /* font-size: calc(2rem + 1.5vw);    */
+        min-width: 100%; 
+    }
+    
+    .intro-first-block .third {
+        font-size: calc(1.4rem + 1.5vw);
+    }
+
+    .intro-second-block img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.1rem;
+    }
+
+    .hire-me-btn {
+        padding: 0.5rem 2.4rem;
+        margin: 1.5rem 0;
+    }   
+}
+
+
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .main-container {
+        padding: 2rem;  
+        height: 85vh;
+    }
+
+    .introduction {
+        flex-direction: row;
+        gap: 5%;
+        margin: 6% auto;
+    }
+
+    .intro-first-block {
+        text-align: left;
+        border-left: 0.3rem solid #ffa500;
+        padding: 1rem 0 1rem 2rem;
+    }
+
+    .intro-second-block {
+        max-width: 40%;
+    }
+
+    .intro-first-block .first {
+        font-size: calc(2rem + 1.5vw);
+    }
+    
+    /* .intro-first-block .second {
+        font-size: calc(2.5rem + 1.5vw);    
+    } */
+    
+    .intro-first-block .third {
+        font-size: calc(1.9rem + 1.5vw);
+    }
+
+    .intro-second-block img {
+        border-radius: 0.6rem;
+    }
+
+    .hire-me-btn {
+        padding: 0.5rem 2.4rem;
+        margin: 1.5rem 0;
+    }   
+}
