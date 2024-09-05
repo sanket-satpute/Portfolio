@@ -1,7 +1,34 @@
-<div class="navbar">
-    <div class="logo">
-        <h2 style="color: #2E3B4E;">Portfolio</h2>
+<!-- overlay-for-mobile-devices -->
+<div class="overlay" #overlay [class.visible]="isOverlayVisible">
+    <div class="overlay-nav-links">
+        <div class="logo">
+            <h2 style="color: #2E3B4E;">Portfolio</h2>
+        </div>
+        <ol>
+            <ul><a href="">Home</a><div></div></ul>
+            <ul><a routerLink="v">About Me</a><div></div></ul>
+            <ul><a href="">Projects</a><div></div></ul>
+            <ul><a routerLink="describe-blog">Skills</a><div></div></ul>
+            <ul><a routerLink="blogs">Contact</a><div></div></ul>
+            <ul><a routerLink="blogs">Blog</a><div></div></ul>
+        </ol>
     </div>
+    <p class="cross-button" (click)="onCrossButtonClick()">&#x2715;</p>
+</div>
+
+
+<div class="navbar">
+    <div class="first-col">
+        <div class="logo">
+            <h2 style="color: #2E3B4E;">Portfolio</h2>
+        </div>
+        
+        <div class="hamburger" (click)="onHamburgerClick()">
+            <div class="first-ham ch-ham" style="width: 100%;"></div>
+            <div class="third-ham ch-ham" style="width: 75%;"></div>
+        </div>
+    </div>
+    
     <div class="nav-links">
         <ol>
             <ul><a href="">Home</a><div></div></ul>

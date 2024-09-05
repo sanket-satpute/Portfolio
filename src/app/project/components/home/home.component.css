@@ -12,11 +12,9 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
-    margin: 2% auto 10% auto;
+    margin: 2% auto 25% auto;
     width: 85%;
 }
-
-
 
 .intro-first-block {
     position: relative;

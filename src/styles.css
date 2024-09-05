@@ -18,6 +18,13 @@
     /* overflow-x: hidden; */
 }
 
+.round-icon {
+  border-radius: 50%;
+  width: 32px; /* adjust the size as needed */
+  height: 32px; /* adjust the size as needed */
+}
+
+
 /* fonts */
 
 /* poppins */
