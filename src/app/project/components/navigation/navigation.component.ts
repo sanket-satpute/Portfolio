@@ -15,7 +15,7 @@ export class NavigationComponent {
     if (this.overlay) {
       if (show) {
         this.overlay.nativeElement.style.bottom = '0';
-        this.overlay.nativeElement.style.height = '100vh';
+        this.overlay.nativeElement.style.height = '100%';
       } else {
         this.overlay.nativeElement.style.bottom = '100%';
         this.overlay.nativeElement.style.height = '0';
