@@ -38,9 +38,9 @@
     height: 80%;
     width: 70%;
     background-image: url('../../../../assets/curve-background.svg');
-    background-size: contain; /* Ensures the entire image fits within the element */
-    background-position: center; /* Centers the image within the element */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .skills-list {
@@ -209,13 +209,6 @@
 
 
 
-
-
-
-
-
-/* x */
-
 .skills-list-not-laptop {
     display: none;
 }
@@ -240,19 +233,16 @@
     justify-content: center;
     gap: 1rem;
     height: 10rem;
-    /* background-color: red; */
 }
 
 .skill-name-mobile {
     font-size: 1.2rem;
     font-weight: bold;
-    /* margin-bottom: 5px; */
 }
 
 .skill-description {
     font-size: 0.9rem;
     color: #666;
-    /* margin-bottom: 10px; */
 }
 
 .box {
@@ -317,31 +307,7 @@
     font-size: 24px;
 }
 
-/* .show-more {
-    display: block;
-    width: 200px;
-    height: 200px;
-    margin: 30px auto 0;
-    background-color: #2196F3;
-    color: white;
-    text-align: center;
-    line-height: 200px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-} */
-/* 
-.show-more:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(33, 150, 243, 0.4);
-} */
 
-
-
-
-/* Media Queries */
 @media (max-width: 1060px) { 
     .skill-circle {
         width: 5rem;
