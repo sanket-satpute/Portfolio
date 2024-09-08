@@ -143,6 +143,10 @@ body {
 
     .about-second-section p {
         font-size: 0.8rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 16;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .know-more-btn {
