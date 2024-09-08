@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="footer-image">
-        <img src="../../../../assets/nature.jpg" alt="Nature">
+        <img src="{{ appTs.current_image_path }}nature.jpg" alt="Nature">
     </div>
     <div class="before-links">
         <ul class="texts">
@@ -14,20 +14,20 @@
                 <p class="raleway" style="font-weight: 600;">So This Is My Life. So This Is My Life</p>
             </li>
         </ul>
-        <a href="{{ app.linkedin_link }}" target="_blank" class="linked-link" style="cursor: pointer;">
-            <img src="../../../../assets/my-image.jpg" alt="Linked In" srcset="">
+        <a href="{{ appTs.linkedin_link }}" target="_blank" class="linked-link" style="cursor: pointer;">
+            <img src="{{ appTs.current_image_path }}my-image.jpg" alt="Linked In" srcset="">
             <p class="raleway" style="font-weight: 600; max-width: 150px;list-style: none;color: white;">Check Linked Profile</p>
         </a>
     </div>
     <div class="footer-content">
         <div class="social-links">
-            <a href="{{ app.github_link }}" target="_blank">
+            <a href="{{ appTs.github_link }}" target="_blank">
                 <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/github.png" alt="github"/>
             </a>
-            <a href="{{ app.facebook_link }}" target="_blank">
+            <a href="{{ appTs.facebook_link }}" target="_blank">
                 <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/facebook--v1.png" alt="facebook--v1"/>                    
             </a>
-            <a href="{{ app.instagram_link }}" target="_blank">
+            <a href="{{ appTs.instagram_link }}" target="_blank">
                 <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png" alt="instagram-new--v1"/>
             </a>
             <!-- Add more social media links as needed -->

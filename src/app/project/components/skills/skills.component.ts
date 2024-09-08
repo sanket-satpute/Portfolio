@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-skills',
@@ -6,6 +7,9 @@ import { Component, AfterViewInit, ElementRef, ViewChildren, QueryList } from '@
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements AfterViewInit {
+
+  constructor(protected appTs: AppComponent) {}
+
   @ViewChildren('circle') circles!: QueryList<ElementRef>;
   percentages = [78, 91, 64, 45];
   skills = [

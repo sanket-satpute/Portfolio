@@ -9,5 +9,5 @@ import { AppComponent } from 'src/app/app.component';
 export class FooterComponent {
 
 
-  constructor(protected app:AppComponent) {}
+  constructor(protected appTs:AppComponent) {}
 }
