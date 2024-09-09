@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-hire-me-dialog',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./hire-me-dialog.component.css']
 })
 export class HireMeDialogComponent {
-
+  constructor(protected appTs: AppComponent) {}
 }
