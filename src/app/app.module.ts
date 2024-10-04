@@ -14,6 +14,7 @@ import { NavigationComponent } from './project/components/navigation/navigation.
 import { HomeComponent } from './project/components/home/home.component';
 import { BlogSpecificationComponent } from './project/components/blog-specification/blog-specification.component';
 import { SkillsComponent } from './project/components/skills/skills.component';
+import { AboutMeBreifIntroComponent } from './project/components/about-me-breif-intro/about-me-breif-intro.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SkillsComponent } from './project/components/skills/skills.component';
     NavigationComponent,
     HomeComponent,
     BlogSpecificationComponent,
-    SkillsComponent
+    SkillsComponent,
+    AboutMeBreifIntroComponent
   ],
   imports: [
     BrowserModule,

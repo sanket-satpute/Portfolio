@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  private texts: string[] = ['Software Engineer', 'Coder', 'Programmer'];
+  private texts: string[] = ['Software Engineer', 'Full Stack Developer', 'Android Developer', 'Java Developer', 'Cloud Engineer', 'Backend Developer '];
   private currentIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
@@ -19,7 +19,15 @@ export class HomeComponent {
   private typingTimeoutId: any;
   private cursorTimeoutId: any;
 
+  imgPath = '';
+
   ngOnInit() {
+    let width = window.innerWidth;
+    if(width > 768) {
+      this.imgPath = '../../../../assets/showing-direction-img-removebg-preview.png';
+    } else {
+      this.imgPath = '../../../../assets/1000_F_291392618_9ub6nM9ONO7hi6TU5BdmIZYxjldxoFio-removebg-preview.png';
+    }
     this.animateText();
     this.blinkCursor();
   }
