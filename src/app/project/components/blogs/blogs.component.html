@@ -1,4 +1,4 @@
-<div class="blogs-list">
+<!-- <div class="blogs-list">
     <div class="blog-card">
         <img src="../../../../assets/nature.jpg" alt="">
         <div class="blog-details">
@@ -50,4 +50,535 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+<!-- Design 1: Neomorphic Card with Gradient Border
+<div class="card-design-1">
+    <div class="gradient-border">
+      <div class="content">
+        <div class="meta">
+          <div class="date-badge">JAN 24</div>
+          <div class="reading-time">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            2 min read
+          </div>
+        </div>
+        <h2 class="title">{{title}}</h2>
+        <div class="author-section">
+          <div class="author-avatar">
+            <span>{{getInitials(author)}}</span>
+          </div>
+          <div class="author-info">
+            <span class="author-name">{{author}}</span>
+            <span class="author-role">Food Blogger</span>
+          </div>
+        </div>
+        <p class="excerpt">{{excerpt}}</p>
+        <div class="action-bar">
+          <button class="read-more">
+            <span>Read Recipe</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M5 12h14m-7-7l7 7-7 7"/>
+            </svg>
+          </button>
+          <div class="engagement">
+            <button class="like-button" [class.liked]="isLiked" (click)="toggleLike()">
+              <svg width="20" height="20" viewBox="0 0 24 24" [class.filled]="isLiked">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <span>{{likes}}</span>
+            </button>
+            <button class="comment-button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <span>{{comments}}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   Design 2: Minimalist Split Card 
+  <div class="card-design-2">
+    <div class="card-left">
+      <div class="category-tag">RECIPE</div>
+      <h2 class="split-title">{{title}}</h2>
+      <div class="time-indicator">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        <span>2 minutes</span>
+      </div>
+    </div>
+    <div class="card-right">
+      <p class="split-excerpt">{{excerpt}}</p>
+      <div class="author-chip">
+        <span class="dot"></span>
+        <span class="chip-author">By {{author}}</span>
+      </div>
+      <button class="explore-btn">
+        <span>Explore</span>
+        <svg viewBox="0 0 24 24" class="arrow-icon">
+          <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+        </svg>
+      </button>
+    </div>
+  </div> -->
+
+
+<div class="main-container">
+  <div class="title-heading nunito-sans">
+    Daily Blog's
+    <div class="underline"></div>
+  </div>
+  <div class="blog-list-new">
+  
+    <div 
+        class="card-container poppins-regular"
+        (mouseenter)="isHovered = true"
+        (mouseleave)="isHovered = false"
+      >
+        <!-- Animated star background -->
+        <div class="star-background">
+          <div 
+            *ngFor="let star of stars; let i = index"
+            class="star"
+            [style.width.px]="star.size"
+            [style.height.px]="star.size"
+            [style.top.%]="star.top"
+            [style.left.%]="star.left"
+            [style.animation]="'twinkle ' + star.duration + 's linear infinite ' + star.delay + 's'"
+            [style.opacity]="i < starCount ? 0.7 : 0"
+          ></div>
+        </div>
+  
+        <!-- Planet illustration -->
+        <div class="planet"></div>
+        
+        <!-- Content container -->
+        <div class="content">
+          <div>
+            <h2 class="title">Delicious Pizza Cooking Recipe</h2>
+            <p class="subtitle">in just 2 minutes</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsa beatae
+              corporis ea, laborum voluptatum iure nisi eaque, eius debitis maxime porro commodi
+              nobis hic molestiae sunt similique voluptatem nostrum...
+            </p>
+          </div>
+          
+          <div class="footer">
+            <div class="meta">
+              <div class="author">
+                <span class="icon user"></span>
+                <span class="name">Sanket Satpute</span>
+              </div>
+              <div class="date">
+                <span class="icon clock"></span>
+                <span>20, Jan 24</span>
+              </div>
+            </div>
+            
+            <button class="read-more">
+              <span>Read More</span>
+              <span class="icon chevron-right" [class.hovered]="isHovered"></span>
+            </button>
+          </div>
+        </div>
+    </div>
+  
+  
+    <div 
+        class="card-container poppins-regular"
+        (mouseenter)="isHovered = true"
+        (mouseleave)="isHovered = false"
+      >
+        <!-- Animated star background -->
+        <div class="star-background">
+          <div 
+            *ngFor="let star of stars; let i = index"
+            class="star"
+            [style.width.px]="star.size"
+            [style.height.px]="star.size"
+            [style.top.%]="star.top"
+            [style.left.%]="star.left"
+            [style.animation]="'twinkle ' + star.duration + 's linear infinite ' + star.delay + 's'"
+            [style.opacity]="i < starCount ? 0.7 : 0"
+          ></div>
+        </div>
+  
+        <!-- Planet illustration -->
+        <div class="planet"></div>
+        
+        <!-- Content container -->
+        <div class="content">
+          <div>
+            <h2 class="title">Delicious Pizza Cooking Recipe</h2>
+            <p class="subtitle">in just 2 minutes</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsa beatae
+              corporis ea, laborum voluptatum iure nisi eaque, eius debitis maxime porro commodi
+              nobis hic molestiae sunt similique voluptatem nostrum...
+            </p>
+          </div>
+          
+          <div class="footer">
+            <div class="meta">
+              <div class="author">
+                <span class="icon user"></span>
+                <span class="name">Sanket Satpute</span>
+              </div>
+              <div class="date">
+                <span class="icon clock"></span>
+                <span>20, Jan 24</span>
+              </div>
+            </div>
+            
+            <button class="read-more">
+              <span>Read More</span>
+              <span class="icon chevron-right" [class.hovered]="isHovered"></span>
+            </button>
+          </div>
+        </div>
+    </div>
+  
+  
+  
+    <div 
+        class="card-container poppins-regular"
+        (mouseenter)="isHovered = true"
+        (mouseleave)="isHovered = false"
+      >
+        <!-- Animated star background -->
+        <div class="star-background">
+          <div 
+            *ngFor="let star of stars; let i = index"
+            class="star"
+            [style.width.px]="star.size"
+            [style.height.px]="star.size"
+            [style.top.%]="star.top"
+            [style.left.%]="star.left"
+            [style.animation]="'twinkle ' + star.duration + 's linear infinite ' + star.delay + 's'"
+            [style.opacity]="i < starCount ? 0.7 : 0"
+          ></div>
+        </div>
+  
+        <!-- Planet illustration -->
+        <div class="planet"></div>
+        
+        <!-- Content container -->
+        <div class="content">
+          <div>
+            <h2 class="title">Delicious Pizza Cooking Recipe</h2>
+            <p class="subtitle">in just 2 minutes</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsa beatae
+              corporis ea, laborum voluptatum iure nisi eaque, eius debitis maxime porro commodi
+              nobis hic molestiae sunt similique voluptatem nostrum...
+            </p>
+          </div>
+          
+          <div class="footer">
+            <div class="meta">
+              <div class="author">
+                <span class="icon user"></span>
+                <span class="name">Sanket Satpute</span>
+              </div>
+              <div class="date">
+                <span class="icon clock"></span>
+                <span>20, Jan 24</span>
+              </div>
+            </div>
+            
+            <button class="read-more">
+              <span>Read More</span>
+              <span class="icon chevron-right" [class.hovered]="isHovered"></span>
+            </button>
+          </div>
+        </div>
+    </div>
+  
+  
+  
+    <div 
+        class="card-container poppins-regular"
+        (mouseenter)="isHovered = true"
+        (mouseleave)="isHovered = false"
+      >
+        <!-- Animated star background -->
+        <div class="star-background">
+          <div 
+            *ngFor="let star of stars; let i = index"
+            class="star"
+            [style.width.px]="star.size"
+            [style.height.px]="star.size"
+            [style.top.%]="star.top"
+            [style.left.%]="star.left"
+            [style.animation]="'twinkle ' + star.duration + 's linear infinite ' + star.delay + 's'"
+            [style.opacity]="i < starCount ? 0.7 : 0"
+          ></div>
+        </div>
+  
+        <!-- Planet illustration -->
+        <div class="planet"></div>
+        
+        <!-- Content container -->
+        <div class="content">
+          <div>
+            <h2 class="title">Delicious Pizza Cooking Recipe</h2>
+            <p class="subtitle">in just 2 minutes</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsa beatae
+              corporis ea, laborum voluptatum iure nisi eaque, eius debitis maxime porro commodi
+              nobis hic molestiae sunt similique voluptatem nostrum...
+            </p>
+          </div>
+          
+          <div class="footer">
+            <div class="meta">
+              <div class="author">
+                <span class="icon user"></span>
+                <span class="name">Sanket Satpute</span>
+              </div>
+              <div class="date">
+                <span class="icon clock"></span>
+                <span>20, Jan 24</span>
+              </div>
+            </div>
+            
+            <button class="read-more">
+              <span>Read More</span>
+              <span class="icon chevron-right" [class.hovered]="isHovered"></span>
+            </button>
+          </div>
+        </div>
+    </div>
+  
+  
+    <div 
+        class="card-container poppins-regular"
+        (mouseenter)="isHovered = true"
+        (mouseleave)="isHovered = false"
+      >
+        <!-- Animated star background -->
+        <div class="star-background">
+          <div 
+            *ngFor="let star of stars; let i = index"
+            class="star"
+            [style.width.px]="star.size"
+            [style.height.px]="star.size"
+            [style.top.%]="star.top"
+            [style.left.%]="star.left"
+            [style.animation]="'twinkle ' + star.duration + 's linear infinite ' + star.delay + 's'"
+            [style.opacity]="i < starCount ? 0.7 : 0"
+          ></div>
+        </div>
+  
+        <!-- Planet illustration -->
+        <div class="planet"></div>
+        
+        <!-- Content container -->
+        <div class="content">
+          <div>
+            <h2 class="title">Delicious Pizza Cooking Recipe</h2>
+            <p class="subtitle">in just 2 minutes</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsa beatae
+              corporis ea, laborum voluptatum iure nisi eaque, eius debitis maxime porro commodi
+              nobis hic molestiae sunt similique voluptatem nostrum...
+            </p>
+          </div>
+          
+          <div class="footer">
+            <div class="meta">
+              <div class="author">
+                <span class="icon user"></span>
+                <span class="name">Sanket Satpute</span>
+              </div>
+              <div class="date">
+                <span class="icon clock"></span>
+                <span>20, Jan 24</span>
+              </div>
+            </div>
+            
+            <button class="read-more">
+              <span>Read More</span>
+              <span class="icon chevron-right" [class.hovered]="isHovered"></span>
+            </button>
+          </div>
+        </div>
+    </div>
+  
+  
+    <div 
+        class="card-container poppins-regular"
+        (mouseenter)="isHovered = true"
+        (mouseleave)="isHovered = false"
+      >
+        <!-- Animated star background -->
+        <div class="star-background">
+          <div 
+            *ngFor="let star of stars; let i = index"
+            class="star"
+            [style.width.px]="star.size"
+            [style.height.px]="star.size"
+            [style.top.%]="star.top"
+            [style.left.%]="star.left"
+            [style.animation]="'twinkle ' + star.duration + 's linear infinite ' + star.delay + 's'"
+            [style.opacity]="i < starCount ? 0.7 : 0"
+          ></div>
+        </div>
+  
+        <!-- Planet illustration -->
+        <div class="planet"></div>
+        
+        <!-- Content container -->
+        <div class="content">
+          <div>
+            <h2 class="title">Delicious Pizza Cooking Recipe</h2>
+            <p class="subtitle">in just 2 minutes</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsa beatae
+              corporis ea, laborum voluptatum iure nisi eaque, eius debitis maxime porro commodi
+              nobis hic molestiae sunt similique voluptatem nostrum...
+            </p>
+          </div>
+          
+          <div class="footer">
+            <div class="meta">
+              <div class="author">
+                <span class="icon user"></span>
+                <span class="name">Sanket Satpute</span>
+              </div>
+              <div class="date">
+                <span class="icon clock"></span>
+                <span>20, Jan 24</span>
+              </div>
+            </div>
+            
+            <button class="read-more">
+              <span>Read More</span>
+              <span class="icon chevron-right" [class.hovered]="isHovered"></span>
+            </button>
+          </div>
+        </div>
+    </div>
+  
+  
+    <div 
+        class="card-container poppins-regular"
+        (mouseenter)="isHovered = true"
+        (mouseleave)="isHovered = false"
+      >
+        <!-- Animated star background -->
+        <div class="star-background">
+          <div 
+            *ngFor="let star of stars; let i = index"
+            class="star"
+            [style.width.px]="star.size"
+            [style.height.px]="star.size"
+            [style.top.%]="star.top"
+            [style.left.%]="star.left"
+            [style.animation]="'twinkle ' + star.duration + 's linear infinite ' + star.delay + 's'"
+            [style.opacity]="i < starCount ? 0.7 : 0"
+          ></div>
+        </div>
+  
+        <!-- Planet illustration -->
+        <div class="planet"></div>
+        
+        <!-- Content container -->
+        <div class="content">
+          <div>
+            <h2 class="title">Delicious Pizza Cooking Recipe</h2>
+            <p class="subtitle">in just 2 minutes</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsa beatae
+              corporis ea, laborum voluptatum iure nisi eaque, eius debitis maxime porro commodi
+              nobis hic molestiae sunt similique voluptatem nostrum...
+            </p>
+          </div>
+          
+          <div class="footer">
+            <div class="meta">
+              <div class="author">
+                <span class="icon user"></span>
+                <span class="name">Sanket Satpute</span>
+              </div>
+              <div class="date">
+                <span class="icon clock"></span>
+                <span>20, Jan 24</span>
+              </div>
+            </div>
+            
+            <button class="read-more">
+              <span>Read More</span>
+              <span class="icon chevron-right" [class.hovered]="isHovered"></span>
+            </button>
+          </div>
+        </div>
+    </div>
+  
+  
+    <div 
+        class="card-container poppins-regular"
+        (mouseenter)="isHovered = true"
+        (mouseleave)="isHovered = false"
+      >
+        <!-- Animated star background -->
+        <div class="star-background">
+          <div 
+            *ngFor="let star of stars; let i = index"
+            class="star"
+            [style.width.px]="star.size"
+            [style.height.px]="star.size"
+            [style.top.%]="star.top"
+            [style.left.%]="star.left"
+            [style.animation]="'twinkle ' + star.duration + 's linear infinite ' + star.delay + 's'"
+            [style.opacity]="i < starCount ? 0.7 : 0"
+          ></div>
+        </div>
+  
+        <!-- Planet illustration -->
+        <div class="planet"></div>
+        
+        <!-- Content container -->
+        <div class="content">
+          <div>
+            <h2 class="title">Delicious Pizza Cooking Recipe</h2>
+            <p class="subtitle">in just 2 minutes</p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsa beatae
+              corporis ea, laborum voluptatum iure nisi eaque, eius debitis maxime porro commodi
+              nobis hic molestiae sunt similique voluptatem nostrum...
+            </p>
+          </div>
+          
+          <div class="footer">
+            <div class="meta">
+              <div class="author">
+                <span class="icon user"></span>
+                <span class="name">Sanket Satpute</span>
+              </div>
+              <div class="date">
+                <span class="icon clock"></span>
+                <span>20, Jan 24</span>
+              </div>
+            </div>
+            
+            <button class="read-more">
+              <span>Read More</span>
+              <span class="icon chevron-right" [class.hovered]="isHovered"></span>
+            </button>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>

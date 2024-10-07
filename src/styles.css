@@ -10,13 +10,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /* overflow-x: hidden; */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .round-icon {
@@ -240,6 +244,14 @@
 /* unica-one */
 .unica-one-regular {
   font-family: "Unica One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* train one regular */
+.train-one-regular {
+  font-family: "Train One", system-ui;
   font-weight: 400;
   font-style: normal;
 }

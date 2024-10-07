@@ -1,0 +1,42 @@
+<!-- projects.component.html -->
+<section class="projects-showcase">
+    <div class="cosmic-background"></div>
+    <div class="container">
+      <h1 class="section-title">Innovative Projects</h1>
+      <p class="section-subtitle">Explore a collection of groundbreaking solutions</p>
+  
+      <div class="category-filter">
+        <button *ngFor="let category of categories"
+                (click)="filterProjects(category)"
+                [class.active]="selectedCategory === category">
+          {{ category }}
+        </button>
+      </div>
+  
+      <div class="projects-grid">
+        <div *ngFor="let project of filteredProjects" 
+             class="project-card"
+             (mouseenter)="setHoveredProject(project)"
+             (mouseleave)="setHoveredProject(null)">
+          <div class="project-image" [style.backgroundImage]="'url(' + project.image + ')'">
+            <div class="project-overlay">
+              <h3 class="project-title">{{ project.title }}</h3>
+              <p class="project-description">{{ project.description }}</p>
+              <div class="project-technologies">
+                <span *ngFor="let tech of project.technologies" class="tech-tag">{{ tech }}</span>
+              </div>
+              <a routerLink="/project-details/1" class="project-link">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- <div class="project-details" *ngIf="hoveredProject">
+        <h2>{{ hoveredProject.title }}</h2>
+        <p>{{ hoveredProject.description }}</p>
+        <div class="tech-list">
+          <span *ngFor="let tech of hoveredProject.technologies" class="tech-item">{{ tech }}</span>
+        </div>
+      </div> -->
+    </div>
+  </section>

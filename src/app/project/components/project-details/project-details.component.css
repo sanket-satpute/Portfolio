@@ -1,0 +1,271 @@
+:host {
+    --primary: #6366f1;
+    --primary-dark: #4338ca;
+    --accent: #f43f5e;
+    --text: #f8fafc;
+    --text-secondary: #94a3b8;
+    --background: #0f172a;
+    --background-light: #1e293b;
+    --success: #10b981;
+    --card-background: rgba(30, 41, 59, 0.5);
+    --font-heading: 'Clash Display', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    display: block;
+  }
+  
+  .root {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .background-pattern {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    z-index: 100;
+    transition: width 0.2s ease-out;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 2rem;
+  }
+  
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(0.3);
+    transform: scale(1.1);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+  }
+  
+  .title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+  
+  .tagline {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-family: var(--font-body);
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .primary-button, .secondary-button {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    font-family: var(--font-body);
+  }
+  
+  .primary-button {
+    background: var(--primary);
+    color: var(--text);
+    border: none;
+  }
+  
+  .secondary-button {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--primary);
+  }
+  
+  /* Section Styles */
+  .section {
+    padding: 6rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .section-light {
+    background: var(--background-light);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Card Styles */
+  .card {
+    background: var(--card-background);
+    backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Stats Section */
+  .stat-icon {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 24px;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+  }
+  
+  .stat-label {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-family: var(--font-body);
+  }
+  
+  /* Skills Section */
+  .section-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    font-family: var(--font-heading);
+    text-align: center;
+  }
+  
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+  }
+  
+  .skill-percentage {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-family: system-ui;
+  }
+  
+  .skill-bar-container {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .skill-bar-fill {
+    height: 100%;
+    transition: width 1s ease-out;
+  }
+  
+  /* Screenshots Section */
+  .screenshot-container {
+    position: relative;
+    height: 600px;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .screenshot {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .screenshot-navigation {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .screenshot-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: var(--text-secondary);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .screenshot-dot.active {
+    width: 2rem;
+    background: var(--primary);
+  }
+  
+  /* Icons */
+  .layers-icon::before { content: "⚡"; }
+  .users-icon::before { content: "👥"; }
+  .code-icon::before { content: "⌨️"; }
+  .external-link-icon::before { content: "↗️"; }
+  .github-icon::before { content: "🔗"; }
+
+  .ico {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .links-ico {
+    filter: invert(100%);
+  }
+
+  .stat-ico {
+    filter: invert(45%) sepia(100%) saturate(500%) hue-rotate(200deg);
+  }

@@ -1,0 +1,6 @@
+<div *ngIf="apiLoaded" class="map-container">
+    <google-map [center]="center" [zoom]="zoom" [height]="'100%'" [width]="'100%'">
+      <map-marker [position]="center" [title]="'My location'"></map-marker>
+    </google-map>
+  </div>
+  

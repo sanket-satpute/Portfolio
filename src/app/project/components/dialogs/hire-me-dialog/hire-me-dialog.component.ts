@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hire-me-dialog',
@@ -7,5 +8,9 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./hire-me-dialog.component.css']
 })
 export class HireMeDialogComponent {
-  constructor(protected appTs: AppComponent) {}
+  constructor(protected appTs: AppComponent, private location: Location) {}
+
+  goBack() {
+    this.location.back();
+  }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,12 @@ import { HomeComponent } from './project/components/home/home.component';
 import { BlogSpecificationComponent } from './project/components/blog-specification/blog-specification.component';
 import { SkillsComponent } from './project/components/skills/skills.component';
 import { AboutMeBreifIntroComponent } from './project/components/about-me-breif-intro/about-me-breif-intro.component';
+import { MapComponent } from './project/components/dialogs/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { ProjectDetailsComponent } from './project/components/project-details/project-details.component';
+import { SkillsSectionComponent } from './project/components/skills-section/skills-section.component';
+import { ProjectsListsComponent } from './project/components/projects-lists/projects-lists.component';
+
 
 @NgModule({
   declarations: [
@@ -30,11 +37,17 @@ import { AboutMeBreifIntroComponent } from './project/components/about-me-breif-
     HomeComponent,
     BlogSpecificationComponent,
     SkillsComponent,
-    AboutMeBreifIntroComponent
+    AboutMeBreifIntroComponent,
+    MapComponent,
+    ProjectDetailsComponent,
+    SkillsSectionComponent,
+    ProjectsListsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GoogleMapsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

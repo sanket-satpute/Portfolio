@@ -1,0 +1,102 @@
+<div class="root">
+  <div 
+    class="background-pattern" 
+    [style.background]="'radial-gradient(600px at ' + mousePosition.x + 'px ' + mousePosition.y + 'px, rgba(99, 102, 241, 0.15), transparent 80%)'">
+  </div>
+  
+  <div class="progress-bar" [style.width.%]="scrolled"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background" [style.backgroundImage]="'url(' + project.screenshots[0] + ')'"></div>
+    <div class="hero-content">
+      <h1 class="title">{{project.title}}</h1>
+      <p class="tagline">{{project.tagline}}</p>
+      <div class="button-container">
+        <button class="primary-button" 
+          (mouseenter)="onButtonHover($event, -2)" 
+          (mouseleave)="onButtonHover($event, 0)">
+          <span>View Live Demo</span>
+          <!-- <i class="external-link-icon"></i> -->
+          <img class="external-link-icon ico links-ico" src="../../../../assets/external-link-svgrepo-com.svg"/>
+        </button>
+        <button class="secondary-button" 
+          (mouseenter)="onSecondaryButtonHover($event, true)" 
+          (mouseleave)="onSecondaryButtonHover($event, false)">
+          <!-- <i class="github-icon"></i> -->
+          <img class="github-icon ico links-ico" src="../../../../assets/github-svgrepo-com.svg"/>
+          <span>View Source</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="grid">
+        <div 
+          class="card" 
+          *ngFor="let stat of project.stats; trackBy: trackByFn"
+          (mouseenter)="onCardHover($event, -5)"
+          (mouseleave)="onCardHover($event, 0)">
+          <div class="stat-icon">
+            <!-- <i [class]="stat.icon + '-icon'"></i> -->
+            <img class="stat-icon ico stat-ico" [src]="stat.icon"/>
+          </div>
+          <h3 class="stat-value">{{stat.value}}</h3>
+          <p class="stat-label">{{stat.label}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Technologies Used</h2>
+      <div class="grid">
+        <div 
+          class="card" 
+          *ngFor="let skill of project.skills; trackBy: trackByFn"
+          (mouseenter)="onCardHover($event, -5)"
+          (mouseleave)="onCardHover($event, 0)">
+          <div class="skill-header">
+            <h3 class="skill-name">{{skill.name}}</h3>
+            <span class="skill-percentage">{{skill.level}}%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div 
+              class="skill-bar-fill" 
+              [style.width.%]="skill.level"
+              [style.backgroundColor]="skill.color">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="screenshot-container">
+        <div 
+          *ngFor="let screenshot of project.screenshots; let i = index; trackBy: trackByFn"
+          class="screenshot"
+          [class.active]="i === activeScreen"
+          [style.opacity]="i === activeScreen ? 1 : 0">
+          <img [src]="screenshot" [alt]="'Screenshot ' + (i + 1)">
+        </div>
+        <div class="screenshot-navigation">
+          <button
+            *ngFor="let screenshot of project.screenshots; let i = index; trackBy: trackByFn"
+            class="screenshot-dot"
+            [class.active]="i === activeScreen"
+            (click)="setActiveScreen(i)">
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -235,3 +235,21 @@ ul a {
 ul:hover div {
     width: 65%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.active div {
+    width: 65%;
+    background-color: #ffa500;
+    border-radius: 10px;
+    transition: width 150ms;
+}

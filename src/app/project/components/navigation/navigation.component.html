@@ -5,12 +5,12 @@
             <h2 style="color: #2E3B4E;">Portfolio</h2>
         </div>
         <ol>
-            <ul><a href="">Home</a><div></div></ul>
-            <ul><a routerLink="v">About Me</a><div></div></ul>
-            <ul><a href="">Projects</a><div></div></ul>
-            <ul><a routerLink="describe-blog">Skills</a><div></div></ul>
-            <ul><a routerLink="blogs">Contact</a><div></div></ul>
-            <ul><a routerLink="blogs">Blog</a><div></div></ul>
+            <ul fragment="home" routerLink="/" (click)="setActiveLink('home', true)" [class.active]="activeLink === 'home'"><a routerLink="">Home</a><div></div></ul>
+            <ul fragment="about-me" routerLink="/" (click)="setActiveLink('about', true)" [class.active]="activeLink === 'about'"><a>About Me</a><div></div></ul>
+            <ul fragment="projects" routerLink="/" (click)="setActiveLink('projects', true)" [class.active]="activeLink === 'projects'"><a>Projects</a><div></div></ul>
+            <ul fragment="skills" routerLink="/" (click)="setActiveLink('skills', true)" [class.active]="activeLink === 'skills'"><a>Skills</a><div></div></ul>
+            <ul fragment="contact-me" routerLink="/" (click)="setActiveLink('contact', true)" [class.active]="activeLink === 'contact'"><a>Contact</a><div></div></ul>
+            <ul fragment="blogs" routerLink="/" (click)="setActiveLink('blog', true)" [class.active]="activeLink === 'blog'"><a routerLink="blogs">Blog</a><div></div></ul>
         </ol>
     </div>
     <p class="cross-button" (click)="onCrossButtonClick()">&#x2715;</p>
@@ -31,12 +31,12 @@
     
     <div class="nav-links">
         <ol>
-            <ul><a href="">Home</a><div></div></ul>
-            <ul><a routerLink="v">About Me</a><div></div></ul>
-            <ul><a href="">Projects</a><div></div></ul>
-            <ul><a routerLink="describe-blog">Skills</a><div></div></ul>
-            <ul><a routerLink="blogs">Contact</a><div></div></ul>
-            <ul><a routerLink="blogs">Blog</a><div></div></ul>
+            <ul fragment="home" routerLink="/" (click)="setActiveLink('home', false)" [class.active]="activeLink === 'home'"><a routerLink="">Home</a><div></div></ul>
+            <ul fragment="about-me" routerLink="/" (click)="setActiveLink('about', false)" [class.active]="activeLink === 'about'"><a>About Me</a><div></div></ul>
+            <ul fragment="projects" routerLink="/" (click)="setActiveLink('projects', false)" [class.active]="activeLink === 'projects'"><a>Projects</a><div></div></ul>
+            <ul fragment="skills" routerLink="/" (click)="setActiveLink('skills', false)" [class.active]="activeLink === 'skills'"><a>Skills</a><div></div></ul>
+            <ul fragment="contact-me" routerLink="/" (click)="setActiveLink('contact', false)" [class.active]="activeLink === 'contact'"><a>Contact</a><div></div></ul>
+            <ul fragment="blogs" (click)="setActiveLink('blog', false)" [class.active]="activeLink === 'blog'"><a routerLink="blogs">Blog</a><div></div></ul>
         </ol>
     </div>
 </div>

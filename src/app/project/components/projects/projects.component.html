@@ -37,7 +37,7 @@
                   <div class="downloads raleway" style="font-weight: 500;">2.90</div>
                 </div>
                 <p class="description roboto">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or...</p>
-                <button class="check-project source-code-pro">Check Project</button>
+                <button [routerLink]="'project-details/1'" class="check-project source-code-pro">Check Project</button>
               </div>
             </div>
             <!-- Repeat the card div for multiple cards -->
@@ -54,7 +54,7 @@
                     <div class="downloads raleway" style="font-weight: 500;">2.90</div>
                   </div>
                   <p class="description roboto">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or...</p>
-                  <button class="check-project source-code-pro">Check Project</button>
+                  <button [routerLink]="'project-details/2'" class="check-project source-code-pro">Check Project</button>
                 </div>
               </div>
 
@@ -70,7 +70,7 @@
                     <div class="downloads raleway" style="font-weight: 500;">2.90</div>
                   </div>
                   <p class="description roboto">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or...</p>
-                  <button class="check-project source-code-pro">Check Project</button>
+                  <button [routerLink]="'project-details/3'" class="check-project source-code-pro">Check Project</button>
                 </div>
               </div>
 
@@ -86,7 +86,7 @@
                     <div class="downloads raleway" style="font-weight: 500;">2.90</div>
                   </div>
                   <p class="description roboto">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or...</p>
-                  <button class="check-project source-code-pro">Check Project</button>
+                  <button [routerLink]="'project-details/4'" class="check-project source-code-pro">Check Project</button>
                 </div>
               </div>
 
@@ -102,10 +102,21 @@
                     <div class="downloads raleway" style="font-weight: 500;">2.90</div>
                   </div>
                   <p class="description roboto">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or...</p>
-                  <button class="check-project source-code-pro">Check Project</button>
+                  <button [routerLink]="'project-details/5'" class="check-project source-code-pro">Check Project</button>
                 </div>
               </div>
 
+              <div routerLink="projects-list" class="card-more">
+                <div class="corner corner-tl"></div>
+                <div class="corner corner-tr"></div>
+                <div class="corner corner-bl"></div>
+                <div class="corner corner-br"></div>
+                <div class="circle-more">
+                    <div class="text-more train-one-regular">
+                        Check<br>More<br>Project
+                    </div>
+                </div>
+            </div>
           </div>
     <!-- </div> -->
 </div>

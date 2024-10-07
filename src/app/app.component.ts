@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'portfolio';
   developer_name = "Sanket Satpute";
   // links
@@ -18,4 +19,17 @@ export class AppComponent {
   diploy_images_path = 'assets/';
 
   current_image_path = this.diploy_images_path; 
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.router.parseUrl(this.router.url).fragment;
+        if (fragment) {
+          document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  }
 }

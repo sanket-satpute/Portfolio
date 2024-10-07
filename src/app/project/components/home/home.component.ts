@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  private texts: string[] = ['Software Engineer', 'Full Stack Developer', 'Android Developer', 'Java Developer', 'Cloud Engineer', 'Backend Developer '];
+  private texts: string[] = ['Software Engineer', 'Full Stack Developer', 'Android Developer', 'Java Developer', 'Cloud Engineer', 'Backend Developer'];
   private currentIndex = 0;
   private charIndex = 0;
   private isDeleting = false;

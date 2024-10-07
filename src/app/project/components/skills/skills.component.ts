@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
@@ -8,7 +9,7 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class SkillsComponent implements AfterViewInit {
 
-  constructor(protected appTs: AppComponent) {}
+  constructor(protected appTs: AppComponent, private router:Router) {}
 
   @ViewChildren('circle') circles!: QueryList<ElementRef>;
   percentages = [78, 91, 64, 45];
@@ -57,5 +58,9 @@ export class SkillsComponent implements AfterViewInit {
 
   getObj(index: number): any {
     return this.skills[index];
+  }
+
+  showMoreSkills() {
+    this.router.navigate(['/skills-section']);
   }
 }

@@ -1,0 +1,214 @@
+<!-- skills-section.component.html -->
+<section class="skills-portfolio">
+  <div class="floating-nav">
+    <div class="nav-item" [class.active]="activeSection === 'overview'" (click)="scrollTo('overview')">
+      <div class="nav-icon">⚡</div>
+      <span>Overview</span>
+    </div>
+    <div class="nav-item" [class.active]="activeSection === 'development'" (click)="scrollTo('development')">
+      <div class="nav-icon">💻</div>
+      <span>Development</span>
+    </div>
+    <div class="nav-item" [class.active]="activeSection === 'design'" (click)="scrollTo('design')">
+      <div class="nav-icon">🎨</div>
+      <span>Design</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="overview" #overviewSection class="section">
+      <h1 class="gradient-text">Skill Mastery</h1>
+          <p class="subtitle">Professional Development Journey</p>
+          
+          <div class="experience-meter">
+            <div class="meter-label">
+              <span>Experience Level</span>
+              <span class="level-indicator">Senior</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill"></div>
+              <div class="milestone" style="left: 25%">
+                <div class="milestone-dot"></div>
+                <span>Junior</span>
+              </div>
+              <div class="milestone" style="left: 50%">
+                <div class="milestone-dot"></div>
+                <span>Mid</span>
+              </div>
+              <div class="milestone" style="left: 75%">
+                <div class="milestone-dot"></div>
+                <span>Senior</span>
+              </div>
+            </div>
+          </div>
+    
+          <div class="stats-grid">
+            <div class="stat-card primary">
+              <div class="card-content">
+                <div class="stat-header">
+                  <div class="stat-icon">🎯</div>
+                  <div class="stat-info">
+                    <h3>Skill Proficiency</h3>
+                    <div class="circular-progress">
+                      <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path d="M18 2.0845
+                          a 15.9155 15.9155 0 0 1 0 31.831
+                          a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke="#eee"
+                          stroke-width="2"
+                        />
+                        <path d="M18 2.0845
+                          a 15.9155 15.9155 0 0 1 0 31.831
+                          a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke="#4f46e5"
+                          stroke-width="2"
+                          stroke-dasharray="85, 100"
+                          class="progress"
+                        />
+                        <text x="18" y="20.35" class="percentage">85%</text>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <span class="trend positive">↑ 12% from last year</span>
+              </div>
+            </div>
+    
+            <div class="stat-card secondary">
+              <div class="card-content">
+                <div class="stat-header">
+                  <div class="stat-icon">⏱️</div>
+                  <div class="stat-info">
+                    <h3>Hours Invested</h3>
+                    <div class="counter">2,840</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <span class="trend positive">+120 this month</span>
+              </div>
+            </div>
+    
+            <div class="stat-card accent">
+              <div class="card-content">
+                <div class="stat-header">
+                  <div class="stat-icon">🏆</div>
+                  <div class="stat-info">
+                    <h3>Certifications</h3>
+                    <div class="counter">15</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <span class="trend positive">2 new this quarter</span>
+              </div>
+            </div>
+          </div>
+
+
+      </div>
+
+      <!-- x -->
+      <div class="skills-showcase" id="development" #developmentSection class="section">
+        <div class="skills-category">
+          <div class="category-header">
+            <h2>Development Expertise</h2>
+            <div class="category-nav">
+              <button *ngFor="let category of categories" 
+                      (click)="filterByCategory(category)"
+                      [class.active]="selectedCategory === category">
+                {{ category }}
+              </button>
+            </div>
+          </div>
+  
+          <div class="skills-mastery-grid">
+            <div *ngFor="let skill of filteredSkills" class="mastery-card">
+              <div class="skill-preview">
+                <div class="preview-content">
+                  <div class="skill-icon">
+                    <fa-icon [icon]="getIcons(skill.icon)" [ngStyle]="{'color': skill.color}"></fa-icon>
+                  </div>
+                  <h3>{{ skill.name }}</h3>
+                </div>
+
+                <div class="circular-progress">
+                  <svg viewBox="0 0 36 36" class="circular-chart">
+                    <path d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      stroke="#eee"
+                      stroke-width="2"
+                    />
+                    <path d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      [attr.stroke]="getColor(skill.level)"
+                      stroke-width="2"
+                      [attr.stroke-dasharray]="skill.level + ', 100'"
+                      class="progress"
+                    />
+                    <text x="18" y="20.35" class="percentage">{{ skill.level }}%</text>
+                  </svg>
+                </div>
+                
+              </div>
+              <div class="skill-details">
+                <p>{{ skill.description }}</p>
+                <div class="skill-tags">
+                  <span *ngFor="let tag of skill.tags" class="tag">{{ tag }}</span>
+                </div>
+                <div class="skill-projects">
+                  <span class="project-count">{{ skill.projects }}</span>
+                  <span class="project-label">Projects Completed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- x -->
+
+    <div id="design" #designSection class="section">
+      <h2 class="section-title">Design Proficiency</h2>
+      <p class="section-subtitle">Crafting visually appealing and user-centric designs</p>
+      
+      <div class="design-skills-grid">
+        <div class="design-skill-card">
+          <div class="design-skill-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3>UI Design</h3>
+          <p>Creating intuitive and aesthetically pleasing user interfaces</p>
+        </div>
+        <div class="design-skill-card">
+          <div class="design-skill-icon">
+            <i class="fas fa-user-friends"></i>
+          </div>
+          <h3>UX Design</h3>
+          <p>Designing seamless and engaging user experiences</p>
+        </div>
+        <div class="design-skill-card">
+          <div class="design-skill-icon">
+            <i class="fas fa-vector-square"></i>
+          </div>
+          <h3>Graphic Design</h3>
+          <p>Developing visually striking graphics and illustrations</p>
+        </div>
+        <div class="design-skill-card">
+          <div class="design-skill-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Responsive Design</h3>
+          <p>Ensuring optimal user experience across all devices</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
